@@ -15,13 +15,16 @@ from pysal.lib import weights
 from pysal.model import spreg
 
 import seaborn as sns
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 plt.style.use('ggplot')
 #sns.set_style("darkgrid")
 plt.rcParams["figure.figsize"] = [16,8]
 
 import pandas as pd
 import geopandas as gpd
+
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
 
 fn=r'/content/DEC_FEB.csv'
 data= pd.read_csv(fn)
@@ -33,8 +36,7 @@ data.head()
 
 data['pm_ration'].plot()
 
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
+
 
 # Select the columns to be standardized
 columns_to_standardize = ['pm2_5_calibrated_value', 'pm10_calibrated_value', 'humidity', 'temperature', 'wind_speed']
